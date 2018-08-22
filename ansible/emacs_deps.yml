@@ -1,0 +1,42 @@
+### ansible-playbook -s emacs_deps.yml  ###
+
+- hosts: local
+  tasks:
+   - name: Install ansible apt helpers
+     apt:
+        name: python-apt
+        state: present
+
+   - name: Add emacs25 repository
+     apt_repository:
+        repo: ppa:kelleyk/emacs
+        state: present
+
+   - name: Install emacs25
+     apt:
+        name: emacs25
+        state: present
+
+   - name: Install clang irony dependencies
+     apt:
+        name: "{{ packages }}"
+        state: present
+     vars:
+        packages:
+        - libclang-dev
+        - clang
+        - cmake
+        - python3-pip
+        - cppcheck
+        - autotools-dev
+
+   # Python packages
+   - name: Install pip2 emacs plugin deps
+     pip:
+        name: edi flake8 importmagic autopep8
+
+   # install for pip3 as well
+   - name: Install pip3 equivalents
+     pip:
+        name: edi flake8 importmagic autopep8
+        executable: pip3
