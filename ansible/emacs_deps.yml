@@ -40,3 +40,8 @@
      pip:
         name: edi flake8 importmagic autopep8
         executable: pip3
+
+   # install emacs packages from melpa
+   - name: Install emacs melpa packages
+     script: tools/melpa_install_packages.sh
+     become: false
