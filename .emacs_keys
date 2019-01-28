@@ -232,3 +232,9 @@ directory."
 (global-set-key (kbd "C-c m") 'maximize-window)
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace) ;; delete single ws on beginning/end lines
 (global-set-key (kbd "C-c f") 'flush-lines) ;; for deleting empty lines in selection, pass ^$
+
+;; Vi compatibility shortuts
+;;set mark commands
+(global-set-key (kbd "C-v") 'set-mark-command) ;; for deleting empty lines in selection, pass ^$
+(global-set-key (kbd "M-SPC") 'set-mark-command)
+(global-set-key (kbd "C-x C-n") 'company-complete)

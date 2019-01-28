@@ -1,4 +1,4 @@
-(package-initialize)
+ (package-initialize)
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
 
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-scheduler-mode)
@@ -104,8 +104,6 @@
 ;; add completion at point
 (global-set-key (kbd "C-@") 'company-complete) ;; for term
 (global-set-key (kbd "C-SPC") 'company-complete) ;; for X
-;;set mark commands
-(global-set-key (kbd "M-SPC") 'set-mark-command)
 
 ;; set default tab char's display width to 4 spaces
 (setq-default tab-width 4) ; emacs 23.1, 24.2, default to 8
@@ -228,6 +226,11 @@
   )
 (add-hook 'git-commit-mode-hook 'my-git-commit-mode-hook)
 
+;; dired mode '!' support
+(add-hook 'dired-load-hook
+          (lambda ()
+            (load "dired-x")))
+
 ;; Usefull registers
 (set-register ?e '(file . "~/.emacs")) ;; Load emacs as C-x r j e (jump to 'e' register)
 
@@ -263,7 +266,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (clojure-mode yasnippet company jinja2-mode ansible forest-blue-theme challenger-deep-theme flycheck-irony eldoc-extension irony-eldoc yasnippet-snippets magit company-irony-c-headers company-irony irony elpy sr-speedbar flycheck)))
+    (evil lalalilo groovy-imports groovy-mode clojure-mode yasnippet company jinja2-mode ansible forest-blue-theme challenger-deep-theme flycheck-irony eldoc-extension irony-eldoc yasnippet-snippets magit company-irony-c-headers company-irony irony elpy sr-speedbar flycheck)))
  '(python-shell-interpreter "python3")
  '(safe-local-variable-values
    (quote
