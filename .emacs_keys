@@ -65,7 +65,7 @@
 
 (global-set-key (kbd "<f6>") 'visit-tags-table)
 (global-set-key (kbd "<f7>") 'semantic-symref)
-(global-set-key (kbd "<f8>") 'rgrep)
+(global-set-key (kbd "<f8>") 'neotree-toggle)
 
 (defun xah-user-buffer-q ()
   "Return t if current buffer is a user buffer, else nil.
