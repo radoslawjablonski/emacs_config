@@ -34,7 +34,7 @@
 ;(global-set-key (kbd "ESC <down>") 'forward-sentence)
 
 ;;select all redefined friendly way
-(global-set-key (kbd "C-x C-a") 'mark-whole-buffer)
+;;(global-set-key (kbd "C-x C-a") 'mark-whole-buffer) ;removed because of conflict with gdb
 (global-set-key (kbd "C-M-w") 'whitespace-mode)
 ;; friendly key for undo!
 (global-set-key (kbd "C-u") 'universal-argument)
@@ -50,7 +50,7 @@
 (global-set-key (kbd "C-M-b") 'compile)
 
 ;; friendly enlarge window
-(global-set-key (kbd "<f1>") 'irony-mode)
+(global-set-key (kbd "<f1>") 'evil-mode)
 (global-set-key (kbd "<f2>") 'eval-buffer)
 (global-set-key (kbd "<f3>") 'magit-status)
 (global-set-key (kbd "<f4>") 'ff-find-other-file) ;;change header/source line in QtCreator
