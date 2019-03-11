@@ -228,6 +228,15 @@ directory."
       (select-window (active-minibuffer-window))
     (error "Minibuffer is not active")))
 
+(defun qrc (replace-str)
+   (interactive "sDo query-replace current word with: ")
+   (forward-word)
+   (let ((end (point)))
+      (backward-word)
+      (kill-ring-save (point) end)
+      (query-replace (current-kill 0) replace-str) ))
+(global-set-key (kbd "C-c r") 'qrc) ;; Replace word under cursor
+
 (global-set-key "\C-co" 'switch-to-minibuffer) ;; Bind to `C-c o'
 (global-set-key (kbd "C-c m") 'maximize-window)
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace) ;; delete single ws on beginning/end lines
