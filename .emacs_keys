@@ -242,7 +242,7 @@ directory."
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace) ;; delete single ws on beginning/end lines
 (global-set-key (kbd "C-c f") 'flush-lines) ;; for deleting empty lines in selection, pass ^$
 
-(global-set-key (kbd "C-S") 'isearch-forward-symbol-at-point) ;Ctrl - S
+(global-set-key (kbd "C-c s") 'isearch-forward-symbol-at-point) ;Ctrl - S
 
 ;; Vi compatibility shortuts
 ;;set mark commands
