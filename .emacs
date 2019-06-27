@@ -7,6 +7,7 @@
 ;;(add-to-list 'semantic-default-submodes 'global-semantic-decoration-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-show-tag-summaries-mode)
 
+(load-file "~/.emacs_keys")
 ;; normally using whitespace where possible, NO TABS
 (setq-default indent-tabs-mode nil)
 
@@ -44,7 +45,7 @@
 (yas-global-mode 1)
 
 ;line numbers mode enabled
-(global-linum-mode 1)
+;(global-linum-mode 1)
 
 ;; shows lines that are consisting only from whitespaces
 (setq show-trailing-whitespace t)
@@ -199,7 +200,6 @@
 (setq elpy-rpc-backend "jedi")
 (setq elpy-rpc-python-command "python3")
 
-(load-file "~/.emacs_keys")
 ;(load-theme 'challenger-deep t)
 
 ;;perl mode
