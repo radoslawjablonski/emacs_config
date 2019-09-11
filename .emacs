@@ -7,7 +7,7 @@
 ;;(add-to-list 'semantic-default-submodes 'global-semantic-decoration-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-show-tag-summaries-mode)
 
-(load-file "~/.emacs_keys")
+(load-file "~/.emacs_keys.el")
 ;; normally using whitespace where possible, NO TABS
 (setq-default indent-tabs-mode nil)
 
