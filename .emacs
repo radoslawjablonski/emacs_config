@@ -231,9 +231,6 @@
           (lambda ()
             (load "dired-x")))
 
-;; Usefull registers
-(set-register ?e '(file . "~/.emacs")) ;; Load emacs as C-x r j e (jump to 'e' register)
-
 (load-theme 'adwaita t)
 (load-theme 'wombat t)
 ;;(load-theme 'misterioso t)

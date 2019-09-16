@@ -263,6 +263,12 @@ directory."
 (define-key dired-mode-map (kbd "X") 'dired-ranger-move)
 (define-key dired-mode-map (kbd "Y") 'dired-ranger-paste)
 
+
+;; use IVY for virtual buffers with C-c v and C-c V shortcuts
+(setq ivy-use-virtual-buffers t)
+(global-set-key (kbd "C-c v") 'ivy-push-view)
+(global-set-key (kbd "C-c V") 'ivy-switch-view)
+
 ;; remapping mark word to mark entire word
 (defun mark-whole-word (&optional arg allow-extend)
   "Like `mark-word', but selects whole words and skips over whitespace.
