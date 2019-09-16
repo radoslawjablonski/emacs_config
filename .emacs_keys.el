@@ -250,6 +250,8 @@ directory."
 (global-set-key (kbd "C-x C-n") 'company-complete)
 (global-set-key (kbd "C-v") 'rectangle-mark-mode) ;; normally C-x <space>
 
+;; dired narrow mode - dynamic filtering of directories after '/'
+(define-key dired-mode-map (kbd "/") 'dired-narrow)
 
 ;; remapping mark word to mark entire word
 (defun mark-whole-word (&optional arg allow-extend)
