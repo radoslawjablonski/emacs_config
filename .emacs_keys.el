@@ -250,12 +250,18 @@ directory."
 (global-set-key (kbd "C-x C-n") 'company-complete)
 (global-set-key (kbd "C-v") 'rectangle-mark-mode) ;; normally C-x <space>
 
+;; DIRED mode helpers
 ;; dired narrow mode - dynamic filtering of directories after '/'
 (define-key dired-mode-map (kbd "/") 'dired-narrow)
 
 ;; dired-subtree module insert and close
 (define-key dired-mode-map (kbd "i") 'dired-subtree-insert)
 (define-key dired-mode-map (kbd ";") 'dired-subtree-remove)
+
+;; dired-ranger handy copy-paste-move operations
+(define-key dired-mode-map (kbd "W") 'dired-ranger-copy)
+(define-key dired-mode-map (kbd "X") 'dired-ranger-move)
+(define-key dired-mode-map (kbd "Y") 'dired-ranger-paste)
 
 ;; remapping mark word to mark entire word
 (defun mark-whole-word (&optional arg allow-extend)
