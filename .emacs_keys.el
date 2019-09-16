@@ -253,6 +253,10 @@ directory."
 ;; dired narrow mode - dynamic filtering of directories after '/'
 (define-key dired-mode-map (kbd "/") 'dired-narrow)
 
+;; dired-subtree module insert and close
+(define-key dired-mode-map (kbd "i") 'dired-subtree-insert)
+(define-key dired-mode-map (kbd ";") 'dired-subtree-remove)
+
 ;; remapping mark word to mark entire word
 (defun mark-whole-word (&optional arg allow-extend)
   "Like `mark-word', but selects whole words and skips over whitespace.
