@@ -172,9 +172,6 @@
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
-;(load "~/.emacs.d_plugins/sr-speedbar.el")
-;(require 'sr-speedbar)
-
 (load "~/.emacs.d_plugins/fic-mode.el")
 (require 'fic-mode) ;; TODO FIXME highlighting
 (add-hook 'c-mode-hook 'turn-on-fic-mode)
@@ -182,11 +179,12 @@
 (add-hook 'emacs-lisp-mode-hook 'turn-on-fic-mode)
 (add-hook 'shell-script-mode-hook 'turn-on-fic-mode)
 
-(load "~/.emacs.d_plugins/cmake-mode.el")
-(require 'cmake-mode)
+;; NOTE - disabling CMAKE mode by default, not used anymore
+;;(load "~/.emacs.d_plugins/cmake-mode.el")
+;;(require 'cmake-mode)
+
 ;to do not confuse with movement
 ;(global-set-key (kbd "M-f") 'clang-format-region)
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;open header after C-c o (if emacs is smart enough to find where it is)
