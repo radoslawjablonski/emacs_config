@@ -1,0 +1,12 @@
+- hosts: local
+  tasks:
+   - name: Install usefull apps
+     apt:
+        name: "{{ packages }}"
+        state: present
+     vars:
+        packages:
+        - zsh
+        - mc
+        - valgrind
+

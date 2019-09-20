@@ -7,15 +7,16 @@
         name: python-apt
         state: present
 
-   - name: Add emacs25 repository
-     apt_repository:
-        repo: ppa:kelleyk/emacs
-        state: present
+### Assuming that emacs will be installed
+#   - name: Add emacs25 repository
+#     apt_repository:
+#        repo: ppa:kelleyk/emacs
+#        state: present
 
-   - name: Install emacs25
-     apt:
-        name: emacs25
-        state: present
+#   - name: Install emacs25
+#     apt:
+#        name: emacs25
+#        state: present
 
    - name: Install clang irony dependencies
      apt:
@@ -27,8 +28,15 @@
         - clang
         - cmake
         - python3-pip
+        - python-pip
         - cppcheck
         - autotools-dev
+
+# Python setuptools
+   - name: Install python-setuptools (needed for pip)
+     apt:
+        name: python-setuptools
+        state: present
 
    # Python packages
    - name: Install pip2 emacs plugin deps
@@ -41,7 +49,8 @@
         name: edi flake8 importmagic autopep8
         executable: pip3
 
+   # Packages are hosted now directly in emacs 
    # install emacs packages from melpa
-   - name: Install emacs melpa packages
-     script: tools/melpa_install_packages.sh
-     become: false
+   #- name: Install emacs melpa packages
+   #  script: tools/melpa_install_packages.sh
+   #  become: false
