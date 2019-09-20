@@ -3,7 +3,7 @@
 
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-scheduler-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-summary-mode)
-; don't know what it does exactly but at least annoyingly decarates headers, so disabling
+; don't know what it does exactly but at least annoyingly decorates headers, so disabling
 ;;(add-to-list 'semantic-default-submodes 'global-semantic-decoration-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-show-tag-summaries-mode)
 
@@ -210,6 +210,9 @@
 	  cperl-continued-statement-offset 4
 	  cperl-indent-parens-as-block t
 	  cperl-tab-always-indent t)
+
+;; ispell change dictionary to american-english
+(setq ispell-dictionary "american")
 
 ;; Perl MODE hook
 (defun my-cperl-mode-hook ()
