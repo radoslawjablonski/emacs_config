@@ -247,7 +247,7 @@ directory."
 ;;set mark commands
 (global-set-key (kbd "M-SPC") 'set-mark-command)
 (global-set-key (kbd "C-x C-n") 'company-complete)
-(global-set-key (kbd "C-v") 'rectangle-mark-mode) ;; normally C-x <space>
+(global-set-key (kbd "C-c v") 'rectangle-mark-mode) ;; normally C-x <space>
 
 (with-eval-after-load 'dired
   ;; DIRED mode helpers
