@@ -74,22 +74,33 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
-(defun c-linux-kernel-mode ()
-  "Set kernel tab mode for current buffer"
+(defun c-linux-tab4-mode ()
+  "Set kernel tab-len 4 mode for current buffer"
   (interactive)
   (setq-default indent-tabs-mode t)
   (setq-default tab-width 4)
-;  (setq-default 'c-basic-offset 4)
   (setq c-default-style "linux" c-basic-offset 4)
+  )
+
+(defun c-linux-tab8-mode ()
+  "Set kernel tab-len 8 mode for current buffer"
+  (interactive)
+  (setq-default indent-tabs-mode t)
+  (setq-default tab-width 8)
+  (setq c-default-style "linux" c-basic-offset 8)
+  )
+
+
+(defun c-linux-whitespace8-mode ()
+  "Set kernel whitespace-len 8 mode for current buffer"
+  (interactive)
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 8)
+  (setq c-default-style "linux" c-basic-offset 8)
   )
 
 ;; Cedet hooks
 (defun my-c-mode-cedet-hook ()
-;; NOTE: disabling . and -> because of irony mode, it is simple much much quicker
-   ;;(local-set-key "." 'semantic-complete-self-insert)
-   ;;(local-set-key ">" 'semantic-complete-self-insert)
-  ;;(local-set-key (kbd "TAB") 'c-indent-line-or-region)
-
   (flycheck-mode)
   (flyspell-prog-mode)
   (setq-default indent-tabs-mode nil)
