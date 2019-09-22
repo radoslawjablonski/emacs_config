@@ -266,8 +266,8 @@ directory."
 
 ;; use IVY for virtual buffers with C-c v and C-c V shortcuts
 (setq ivy-use-virtual-buffers t)
-(global-set-key (kbd "C-c v") 'ivy-push-view)
-(global-set-key (kbd "C-c V") 'ivy-switch-view)
+(global-set-key (kbd "C-c i") 'ivy-push-view)
+(global-set-key (kbd "C-c I") 'ivy-switch-view)
 
 ;; remapping mark word to mark entire word
 (defun mark-whole-word (&optional arg allow-extend)
