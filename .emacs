@@ -90,7 +90,6 @@
   (setq c-default-style "linux" c-basic-offset 8)
   )
 
-
 (defun c-linux-whitespace8-mode ()
   "Set kernel whitespace-len 8 mode for current buffer"
   (interactive)
@@ -243,7 +242,7 @@
           (lambda ()
             (load "dired-x")))
 
-(load-theme 'adwaita t)
+; (load-theme 'adwaita t)
 (load-theme 'wombat t)
 ;;(load-theme 'misterioso t)
 ;;(custom-set-variables
