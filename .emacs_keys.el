@@ -196,17 +196,19 @@ directory."
 
 (global-set-key "\C-x>" 'my-select-last-window)
 
-;; previous - next window configuration M-s M-p
-(defun my-previous-window ()
-  "Previous window"
-  (interactive)
-  (other-window -1))
-(global-set-key (kbd "M-p") 'my-previous-window)
+;; Disabling shortcuts that seems to be unused now
+;; TODO: remove that if really not needed
+;; ;; previous - next window configuration M-s M-p
+;; (defun my-previous-window ()
+;;   "Previous window"
+;;   (interactive)
+;;   (other-window -1))
+;; (global-set-key (kbd "M-p") 'my-previous-window)
 
-(global-set-key (kbd "M-s") 'other-window) ; cursor to other pane
-(add-hook 'dired-mode-hook
-          (lambda()
-            (local-unset-key (kbd "M-s"))))
+;; (global-set-key (kbd "M-s") 'other-window) ; cursor to other pane
+;; (add-hook 'dired-mode-hook
+;;           (lambda()
+;;             (local-unset-key (kbd "M-s"))))
 
 (defun copy-buffer-name ()
   (interactive)
