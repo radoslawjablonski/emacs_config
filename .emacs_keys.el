@@ -28,13 +28,6 @@
 (define-key comint-mode-map (kbd "<up>") 'comint-previous-input)
 (define-key comint-mode-map (kbd "<down>") 'comint-next-input)
 
-;(global-set-key (kbd "M-<up>") 'backward-sentence)
-;(global-set-key (kbd "M-<down>") 'forward-sentence)
-;(global-set-key (kbd "ESC <up>") 'backward-sentence)
-;(global-set-key (kbd "ESC <down>") 'forward-sentence)
-
-;;select all redefined friendly way
-;;(global-set-key (kbd "C-x C-a") 'mark-whole-buffer) ;removed because of conflict with gdb
 (global-set-key (kbd "C-M-w") 'whitespace-mode)
 ;; friendly key for undo!
 (global-set-key (kbd "C-u") 'universal-argument)
@@ -189,26 +182,12 @@ directory."
   (interactive)
   (select-window (frame-first-window)))
 
-(global-set-key "\C-x<" 'my-select-first-window)
+(global-set-key (kbd "C-c <") 'my-select-first-window)
 (defun my-select-last-window ()
   (interactive)
   (select-window (previous-window (frame-first-window))))
 
-(global-set-key "\C-x>" 'my-select-last-window)
-
-;; Disabling shortcuts that seems to be unused now
-;; TODO: remove that if really not needed
-;; ;; previous - next window configuration M-s M-p
-;; (defun my-previous-window ()
-;;   "Previous window"
-;;   (interactive)
-;;   (other-window -1))
-;; (global-set-key (kbd "M-p") 'my-previous-window)
-
-;; (global-set-key (kbd "M-s") 'other-window) ; cursor to other pane
-;; (add-hook 'dired-mode-hook
-;;           (lambda()
-;;             (local-unset-key (kbd "M-s"))))
+(global-set-key (kbd "C-c >") 'my-select-last-window)
 
 (defun copy-buffer-name ()
   (interactive)
