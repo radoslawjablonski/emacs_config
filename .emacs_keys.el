@@ -302,3 +302,5 @@ selects backward.)"
 
 ;; Now M-@ works much better
 (global-set-key [remap mark-word] 'mark-whole-word)
+
+(global-set-key (kbd "C-c SPC") 'just-one-space)
