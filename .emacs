@@ -8,6 +8,7 @@
 (add-to-list 'semantic-default-submodes 'global-semantic-show-tag-summaries-mode)
 
 (load-file "~/.emacs_keys.el")
+(load-file "~/.emacs_custom_func.el")
 ;; normally using whitespace where possible, NO TABS
 (setq-default indent-tabs-mode nil)
 
