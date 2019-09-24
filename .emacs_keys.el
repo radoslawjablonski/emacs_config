@@ -129,20 +129,6 @@ directory."
     (call-interactively 'execute-extended-command)))
 (global-set-key (kbd "M-X") 'in-directory)
 
-(defun transpose-buffers (arg)
-  "Transpose the buffers shown in two windows."
-  (interactive "p")
-  (let ((selector (if (>= arg 0) 'next-window 'previous-window)))
-    (while (/= arg 0)
-      (let ((this-win (window-buffer))
-            (next-win (window-buffer (funcall selector))))
-        (set-window-buffer (selected-window) next-win)
-        (set-window-buffer (funcall selector) this-win)
-        )
-      (setq arg (if (plusp arg) (1- arg) (1+ arg))))))
-;; transpose two windows with each other
-(global-set-key (kbd "C-x t") 'transpose-buffers)
-
 (defun copy-line (&optional arg)
   "Do a kill-line but copy rather than kill.  This function directly calls
     kill-line, so see documentation of kill-line for how to use it including prefix
@@ -289,5 +275,9 @@ selects backward.)"
   "Kill the current buffer."
   (interactive)
   (kill-buffer (current-buffer)))
+
+
+;; transpose two windows with each other
+(global-set-key (kbd "C-x t") 'window-swap-states)
 
 (global-set-key (kbd "C-x k") 'bjm/kill-this-buffer)
