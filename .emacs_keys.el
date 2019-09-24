@@ -284,3 +284,10 @@ selects backward.)"
 (global-set-key [remap mark-word] 'mark-whole-word)
 
 (global-set-key (kbd "C-c SPC") 'just-one-space)
+
+(defun bjm/kill-this-buffer ()
+  "Kill the current buffer."
+  (interactive)
+  (kill-buffer (current-buffer)))
+
+(global-set-key (kbd "C-x k") 'bjm/kill-this-buffer)
