@@ -58,7 +58,8 @@
 
 (global-set-key (kbd "<f6>") 'visit-tags-table)
 (global-set-key (kbd "<f7>") 'semantic-symref)
-(global-set-key (kbd "<f8>") 'neotree-toggle)
+(global-set-key (kbd "<f8>") 'neotree-toggle) ;; TODO: this seems to be unused
+;; TODO: F9 is free to use:)
 
 (defun xah-user-buffer-q ()
   "Return t if current buffer is a user buffer, else nil.
@@ -120,6 +121,22 @@ Version 2016-06-19"
 
 (global-set-key (kbd "C-l") 'goto-line)
 ;(global-set-key (kbd "C-M-f") 'indent-region) ;;practically unused and standard regex search might suit better...
+
+;; allow to search on marked selection - normally in emacs this feature is not available
+;; (not before C-s, this allow to use selection prior to C-s)
+;; TODO: Ideally selection should be pasted to C-s but could not find solution for that
+(defun search-marked-selection (beg end)
+      "search for selected text"
+      (interactive "r")
+      (let (
+            (selection (buffer-substring-no-properties beg end))
+           )
+        (deactivate-mark)
+        (isearch-mode t nil nil nil)
+        (isearch-yank-string selection)
+      )
+    )
+(define-key global-map (kbd "C-c m") 'search-marked-selection)
 
 (defun in-directory (dir)
   "Runs execute-extended-command with default-directory set to the given
@@ -205,7 +222,6 @@ directory."
 (global-set-key (kbd "C-c r") 'qrc) ;; Replace word under cursor
 
 (global-set-key "\C-co" 'switch-to-minibuffer) ;; Bind to `C-c o'
-(global-set-key (kbd "C-c m") 'maximize-window)
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace) ;; delete single ws on beginning/end lines
 (global-set-key (kbd "C-c f") 'flush-lines) ;; for deleting empty lines in selection, pass ^$
 
@@ -276,8 +292,8 @@ selects backward.)"
   (interactive)
   (kill-buffer (current-buffer)))
 
+;; kill current buffer without asking questions
+(global-set-key (kbd "C-x k") 'bjm/kill-this-buffer)
 
 ;; transpose two windows with each other
 (global-set-key (kbd "C-x t") 'window-swap-states)
-
-(global-set-key (kbd "C-x k") 'bjm/kill-this-buffer)
