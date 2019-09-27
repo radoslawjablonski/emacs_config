@@ -158,6 +158,30 @@ If not, then fallback to standard isearch-backward"
     )
   )
 
+;; Smart wrapper for M-.
+(defun wrap-object-code-search ()
+  "Wraps searching for M-. in order to make it smarter:
+- when we are on header line, go to header by ff-find-other-file
+- when we are elsewhere, try to find object definitions via xref-find-definitions "
+  (interactive)
+  (let (xref_find_mode)
+    (setq xref_find_mode nil)
+    (save-excursion ;; save cursor position
+      (beginning-of-line)
+      (if (search-forward "#include " (line-end-position) t)
+          (call-interactively 'ff-find-other-file)
+        (setq xref_find_mode t) ;fallback to standard search M-. below
+        )
+      )
+    ;; if we are here and search for include was not launched, then calling M-.
+    ;; by xref-find-definitions
+    (when xref_find_mode
+      (xref-find-definitions (symbol-name(symbol-at-point))))
+    )
+  )
+
+(global-set-key (kbd "M-.") 'wrap-object-code-search)
+
 ;; Run command in current directory - not used frequently now though
 (defun in-directory (dir)
   "Runs execute-extended-command with default-directory set to the given
