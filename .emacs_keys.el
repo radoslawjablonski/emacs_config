@@ -132,35 +132,31 @@ In order to use it for backward search, just pass nil as is_forward param"
   (isearch-yank-string selection_string)
   )
 
-(defun search-forward-wrapper (beg end)
+(defun search-forward-wrapper ()
   "If some region is marked, put marked text in search area.
 If not, then fallback to standard isearch-forward"
-  (interactive "r")
-  (if (use-region-p)
-        (let (
-              (selection_string (buffer-substring-no-properties beg end))
-              )
-          (search-selection-string selection_string t)
-          ) ; marked selection
-    (isearch-forward) ; fallback to stanard search
+  (interactive)
+  (if (region-active-p)
+      (let ((selection_string
+             (buffer-substring-no-properties (region-beginning) (region-end))))
+        (search-selection-string selection_string t)
+        )
+    (isearch-forward) ; no marked selection - fallback to stanard search
     )
   )
-(global-set-key (kbd "C-s") 'search-forward-wrapper)
 
-(defun search-backward-wrapper (beg end)
+(defun search-backward-wrapper ()
   "If some region is marked, put marked text in search area.
 If not, then fallback to standard isearch-backward"
-  (interactive "r")
-  (if (use-region-p)
-        (let (
-              (selection_string (buffer-substring-no-properties beg end))
-              )
-          (search-selection-string selection_string nil)
-          ); marked selection
-    (isearch-backward) ; fallback to stanard search
+  (interactive)
+  (if (region-active-p)
+      (let ((selection_string
+             (buffer-substring-no-properties (region-beginning) (region-end))))
+        (search-selection-string selection_string nil)
+        )
+    (isearch-backward) ; no marked selection - fallback to stanard search
     )
   )
-(global-set-key (kbd "C-r") 'search-backward-wrapper)
 
 ;; Run command in current directory - not used frequently now though
 (defun in-directory (dir)
