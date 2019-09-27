@@ -1,4 +1,8 @@
 ;;basics
+;; enabling friendly C-c C-x C-z shortcuts when there is a selection
+(cua-mode t)
+;; and C-s as 'save buffer' - C-f will be remapped below to search-wrapper
+(global-set-key (kbd "C-s") 'save-buffer)
 
 ;;mouse
 
@@ -145,6 +149,8 @@ If not, then fallback to standard isearch-forward"
     )
   )
 
+(global-set-key (kbd "C-f") 'search-forward-wrapper)
+
 (defun search-backward-wrapper ()
   "If some region is marked, put marked text in search area.
 If not, then fallback to standard isearch-backward"
@@ -157,6 +163,8 @@ If not, then fallback to standard isearch-backward"
     (isearch-backward) ; no marked selection - fallback to stanard search
     )
   )
+
+(global-set-key (kbd "C-r") 'search-forward-wrapper)
 
 ;; Smart wrapper for M-.
 (defun wrap-object-code-search ()
