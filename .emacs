@@ -243,6 +243,10 @@
           (lambda ()
             (load "dired-x")))
 
+;; Auto-refresh dired on file change
+(add-hook 'dired-mode-hook 'auto-revert-mode)
+(setq auto-revert-verbose nil)
+
 ; (load-theme 'adwaita t)
 (load-theme 'wombat t)
 ;;(load-theme 'misterioso t)
