@@ -277,9 +277,10 @@ directory."
 
 (global-set-key "\C-co" 'switch-to-minibuffer) ;; Bind to `C-c o'
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace) ;; delete single ws on beginning/end lines
-(global-set-key (kbd "C-c f") 'flush-lines) ;; for deleting empty lines in selection, pass ^$
 
-(global-set-key (kbd "C-c s") 'isearch-forward-symbol-at-point) ;Ctrl - S
+;; for compatibility with C-f searcher
+(global-set-key (kbd "C-c f") 'isearch-forward-symbol-at-point)
+(global-set-key (kbd "C-c s") 'isearch-forward-symbol-at-point)
 
 ;; Vi compatibility shortuts
 ;;set mark commands
