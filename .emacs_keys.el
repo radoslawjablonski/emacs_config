@@ -122,22 +122,47 @@ Version 2016-06-19"
 (global-set-key (kbd "C-l") 'goto-line)
 ;(global-set-key (kbd "C-M-f") 'indent-region) ;;practically unused and standard regex search might suit better...
 
-;; allow to search on marked selection - normally in emacs this feature is not available
-;; (not before C-s, this allow to use selection prior to C-s)
-;; TODO: Ideally selection should be pasted to C-s but could not find solution for that
-(defun search-marked-selection (beg end)
-      "search for selected text"
-      (interactive "r")
-      (let (
-            (selection (buffer-substring-no-properties beg end))
-           )
-        (deactivate-mark)
-        (isearch-mode t nil nil nil)
-        (isearch-yank-string selection)
-      )
-    )
-(define-key global-map (kbd "C-c m") 'search-marked-selection)
+;; isearch selection string wrappers
+(defun search-selection-string (str is_forward)
+  "Searches for string using isearch-forward/isearch-backward.
+In order to use it for backward search, just pass nil as is_forward param"
+  (interactive "s\nc")
+  (deactivate-mark)
+  (isearch-mode is_forward nil nil nil)
+  (isearch-yank-string selection_string)
+  )
 
+(defun search-forward-wrapper (beg end)
+  "If some region is marked, put marked text in search area.
+If not, then fallback to standard isearch-forward"
+  (interactive "r")
+  (if (use-region-p)
+        (let (
+              (selection_string (buffer-substring-no-properties beg end))
+              )
+          (search-selection-string selection_string t)
+          ) ; marked selection
+    (isearch-forward) ; fallback to stanard search
+    )
+  )
+(global-set-key (kbd "C-s") 'search-forward-wrapper)
+
+(defun search-backward-wrapper (beg end)
+  "If some region is marked, put marked text in search area.
+If not, then fallback to standard isearch-backward"
+  (interactive "r")
+  (if (use-region-p)
+        (let (
+              (selection_string (buffer-substring-no-properties beg end))
+              )
+          (search-selection-string selection_string nil)
+          ); marked selection
+    (isearch-backward) ; fallback to stanard search
+    )
+  )
+(global-set-key (kbd "C-r") 'search-backward-wrapper)
+
+;; Run command in current directory - not used frequently now though
 (defun in-directory (dir)
   "Runs execute-extended-command with default-directory set to the given
 directory."
