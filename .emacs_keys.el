@@ -62,7 +62,7 @@
 
 (global-set-key (kbd "<f6>") 'visit-tags-table)
 (global-set-key (kbd "<f7>") 'semantic-symref)
-(global-set-key (kbd "<f8>") 'neotree-toggle) ;; TODO: this seems to be unused
+(global-set-key (kbd "<f8>") 'neotree-toggle)
 ;; TODO: F9 is free to use:)
 
 (defun xah-user-buffer-q ()
@@ -213,16 +213,6 @@ directory."
     ;; optional key binding
 (global-set-key (kbd "C-c C-k") 'copy-line)
 
-(defun mark-word-from-beginning ()
-  "Mark current word to buffer no matter in which position of word we are"
-  (interactive)
-  (backward-word)
-  (mark-word)
-  (kill-ring-save (region-beginning) (region-end))
-  (message "Marked %s" (car kill-ring))
-  )
-(global-set-key (kbd "M-#") 'mark-word-from-beginning)
-
 (defun last-edit ()
   "Go back to last add/delete edit"
   (interactive)
@@ -236,22 +226,13 @@ directory."
      (t (message "No add/delete edit occurred")))))
 (global-set-key (kbd "M-e") 'last-edit)
 
-(defun my-select-first-window ()
-  (interactive)
-  (select-window (frame-first-window)))
-
-(global-set-key (kbd "C-c <") 'my-select-first-window)
-(defun my-select-last-window ()
-  (interactive)
-  (select-window (previous-window (frame-first-window))))
-
-(global-set-key (kbd "C-c >") 'my-select-last-window)
-
 (defun copy-buffer-name ()
   (interactive)
   (kill-new (buffer-name))
   (message "Copied %s to the clipboard" (buffer-name))
-)
+  )
+
+;; TODO: unused
 (global-set-key (kbd "C-c b") 'copy-buffer-name) ; cursor to other pane
 
 (add-hook 'cperl-mode-hook
