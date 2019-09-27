@@ -150,6 +150,8 @@ If not, then fallback to standard isearch-forward"
   )
 
 (global-set-key (kbd "C-f") 'search-forward-wrapper)
+;; it is needed also to add C-f for continuation
+(define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
 
 (defun search-backward-wrapper ()
   "If some region is marked, put marked text in search area.
