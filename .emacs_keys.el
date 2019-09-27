@@ -322,3 +322,7 @@ selects backward.)"
 
 ;; transpose two windows with each other
 (global-set-key (kbd "C-x t") 'window-swap-states)
+
+;; M-s windows switch
+;; rarely used now but quite helpfull with a lot of windows
+(global-set-key (kbd "M-s") 'other-window)
