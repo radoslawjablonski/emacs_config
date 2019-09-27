@@ -51,7 +51,6 @@
 (global-set-key (kbd "<f1>") 'evil-mode)
 (global-set-key (kbd "<f2>") 'eval-buffer)
 (global-set-key (kbd "<f3>") 'magit-status)
-(global-set-key (kbd "<f4>") 'ff-find-other-file) ;;change header/source line in QtCreator
 
 ;; NOTE: add '-L' to find to follow symlink references
 (defun create-tags (dir-name)
@@ -63,7 +62,6 @@
 
 (global-set-key (kbd "<f6>") 'visit-tags-table)
 (global-set-key (kbd "<f7>") 'semantic-symref)
-(global-set-key (kbd "<f8>") 'neotree-toggle)
 ;; TODO: F9 is free to use:)
 
 (defun xah-user-buffer-q ()
