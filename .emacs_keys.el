@@ -3,6 +3,7 @@
 (cua-mode t)
 ;; and C-s as 'save buffer' - C-f will be remapped below to search-wrapper
 (global-set-key (kbd "C-s") 'save-buffer)
+(global-set-key (kbd "C-o") 'find-file)
 
 ;;mouse
 
