@@ -164,8 +164,7 @@ If not, then fallback to standard isearch-backward"
 - when we are on header line, go to header by ff-find-other-file
 - when we are elsewhere, try to find object definitions via xref-find-definitions "
   (interactive)
-  (let (xref_find_mode)
-    (setq xref_find_mode nil)
+  (let ((xref_find_mode nil))
     (save-excursion ;; save cursor position
       (beginning-of-line)
       (if (search-forward "#include " (line-end-position) t)
