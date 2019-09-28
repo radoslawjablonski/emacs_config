@@ -286,6 +286,8 @@ directory."
 
   ;; dired-mapping for C-o for find file
   (define-key dired-mode-map (kbd "C-o") 'find-file)
+
+  (define-key dired-mode-map (kbd "<DEL>") 'dired-up-directory)
 ) ;; end of dired mode keys
 
 ;; use IVY for virtual buffers with C-c v and C-c V shortcuts
