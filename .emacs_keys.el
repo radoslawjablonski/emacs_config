@@ -3,6 +3,8 @@
 (cua-mode t)
 ;; and C-s as 'save buffer' - C-f will be remapped below to search-wrapper
 (global-set-key (kbd "C-s") 'save-buffer)
+;; NOTE: C-o handling also is re-mapped in dired mode (opened dir in frame
+;; by default)
 (global-set-key (kbd "C-o") 'find-file)
 
 ;;mouse
@@ -281,6 +283,9 @@ directory."
   (define-key dired-mode-map (kbd "W") 'dired-ranger-copy)
   (define-key dired-mode-map (kbd "X") 'dired-ranger-move)
   (define-key dired-mode-map (kbd "Y") 'dired-ranger-paste)
+
+  ;; dired-mapping for C-o for find file
+  (define-key dired-mode-map (kbd "C-o") 'find-file)
 ) ;; end of dired mode keys
 
 ;; use IVY for virtual buffers with C-c v and C-c V shortcuts
