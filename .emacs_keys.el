@@ -336,3 +336,6 @@ selects backward.)"
 ;; M-s windows switch
 ;; rarely used now but quite helpfull with a lot of windows
 (global-set-key (kbd "M-s") 'other-window)
+
+;; on some terminal 'End' is mapped as '<select>
+(global-set-key (kbd "<select>") 'move-end-of-line)
