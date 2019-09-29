@@ -213,6 +213,15 @@ directory."
     (kill-line arg)))
     ;; optional key binding
 (global-set-key (kbd "C-c C-k") 'copy-line)
+;; have to fix this mapping also in perl and C-mode (some comment style)
+
+(add-hook 'cperl-mode-hook
+          (lambda()
+            (local-unset-key (kbd "C-c C-k"))))
+
+(add-hook 'c-mode-hook
+          (lambda()
+            (local-unset-key (kbd "C-c C-k"))))
 
 (defun last-edit ()
   "Go back to last add/delete edit"
@@ -236,10 +245,6 @@ directory."
 ;; TODO: unused
 (global-set-key (kbd "C-c b") 'copy-buffer-name) ; cursor to other pane
 
-(add-hook 'cperl-mode-hook
-          (lambda()
-            (local-unset-key (kbd "C-c C-k"))))
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; go to minibuffer
 (defun switch-to-minibuffer ()
   "Switch to minibuffer window."
