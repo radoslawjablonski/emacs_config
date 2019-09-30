@@ -52,6 +52,7 @@
 (global-set-key (kbd "<f1>") 'evil-mode)
 (global-set-key (kbd "<f2>") 'eval-buffer)
 (global-set-key (kbd "<f3>") 'magit-status)
+(global-set-key (kbd "<f4>") 'ibuffer)
 
 ;; NOTE: add '-L' to find to follow symlink references
 (defun create-tags (dir-name)
@@ -62,8 +63,7 @@
 (global-set-key (kbd "<f5>") 'create-tags)
 
 (global-set-key (kbd "<f6>") 'visit-tags-table)
-(global-set-key (kbd "<f7>") 'semantic-symref)
-;; TODO: F9 is free to use:)
+;; TODO: F7-F9 is free to use:)
 
 (defun xah-user-buffer-q ()
   "Return t if current buffer is a user buffer, else nil.
@@ -166,7 +166,7 @@ If not, then fallback to standard isearch-backward"
     )
   )
 
-(global-set-key (kbd "C-r") 'search-forward-wrapper)
+(global-set-key (kbd "C-r") 'search-backward-wrapper)
 
 ;; Smart wrapper for M-.
 (defun wrap-object-code-search ()
@@ -344,9 +344,9 @@ selects backward.)"
 ;; transpose two windows with each other
 (global-set-key (kbd "C-x t") 'window-swap-states)
 
-;; M-s windows switch
+;; M-o window switch
 ;; rarely used now but quite helpfull with a lot of windows
-(global-set-key (kbd "M-s") 'other-window)
+(global-set-key (kbd "M-o") 'other-window)
 
 ;; on some terminal 'End' is mapped as '<select>
 (global-set-key (kbd "<select>") 'move-end-of-line)
