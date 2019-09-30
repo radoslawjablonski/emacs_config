@@ -79,7 +79,6 @@ version 2016-06-18"
        ((string-equal "*Help*" (buffer-name)) nil)
        ((string-equal "*Completions*" (buffer-name)) nil)
        ((string-equal "*Semantic SymRef*" (buffer-name)) nil)
-       ((string-equal "*Ibuffer*" (buffer-name)) nil)
        ((string-equal "*Messages*" (buffer-name)) nil)
        (t t)
        )
