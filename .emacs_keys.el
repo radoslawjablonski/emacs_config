@@ -351,8 +351,12 @@ selects backward.)"
 ;; on some terminal 'End' is mapped as '<select>
 (global-set-key (kbd "<select>") 'move-end-of-line)
 
-;; evil-mode key fixes to do not enable
-(evil-set-initial-state 'ibuffer-mode 'emacs)
-(evil-set-initial-state 'bookmark-bmenu-mode 'normal)
-(evil-set-initial-state 'dired-mode 'emacs)
-(evil-set-initial-state 'magit-mode 'emacs)
+;; evil-mode key fixes to do not enable - not
+;; re-binding all standard keypresses because there is
+;; simply too much of them C-z C-x C-v C-k C-e ....
+;; Easier simply to disable it when not needed
+(with-eval-after-load 'evil
+  (evil-set-initial-state 'ibuffer-mode 'emacs)
+  (evil-set-initial-state 'bookmark-bmenu-mode 'normal)
+  (evil-set-initial-state 'dired-mode 'emacs)
+  (evil-set-initial-state 'magit-mode 'emacs))
