@@ -247,6 +247,14 @@
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 (setq auto-revert-verbose nil)
 
+;; same auto refresh buf for ibuffer
+(add-hook 'ibuffer-mode-hook
+	  '(lambda ()
+	     (ibuffer-auto-mode 1)))
+
+;; Don't ask for confirmation when deleting buffer
+(setq ibuffer-expert t)
+
 ; (load-theme 'adwaita t)
 (load-theme 'wombat t)
 ;;(load-theme 'misterioso t)
