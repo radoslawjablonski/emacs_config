@@ -350,3 +350,9 @@ selects backward.)"
 
 ;; on some terminal 'End' is mapped as '<select>
 (global-set-key (kbd "<select>") 'move-end-of-line)
+
+;; evil-mode key fixes to do not enable
+(evil-set-initial-state 'ibuffer-mode 'emacs)
+(evil-set-initial-state 'bookmark-bmenu-mode 'normal)
+(evil-set-initial-state 'dired-mode 'emacs)
+(evil-set-initial-state 'magit-mode 'emacs)
