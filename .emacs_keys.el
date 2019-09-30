@@ -148,6 +148,7 @@ If not, then fallback to standard isearch-forward"
     )
   )
 
+(global-set-key (kbd "C-s") 'search-forward-wrapper)
 (global-set-key (kbd "C-f") 'search-forward-wrapper)
 ;; it is needed also to add C-f for continuation
 (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
