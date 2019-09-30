@@ -1,8 +1,7 @@
 ;;basics
 ;; enabling friendly C-c C-x C-z shortcuts when there is a selection
 (cua-mode t)
-;; and C-s as 'save buffer' - C-f will be remapped below to search-wrapper
-(global-set-key (kbd "C-s") 'save-buffer)
+
 ;; NOTE: C-o handling also is re-mapped in dired mode (opened dir in frame
 ;; by default)
 (global-set-key (kbd "C-o") 'find-file)
