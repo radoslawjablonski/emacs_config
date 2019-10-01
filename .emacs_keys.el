@@ -63,8 +63,9 @@
 (global-set-key (kbd "<f5>") 'create-tags)
 
 (global-set-key (kbd "<f6>") 'visit-tags-table)
-(global-set-key (kbd "<f7>") 're-builder)
-;; TODO: F7-F9 is free to use:)
+(global-set-key (kbd "<f7>") 'list-bookmarks)
+;; TODO <f8> is free (global-set-key (kbd "<f7>") 're-builder)
+;; TODO: f9 free
 
 (defun xah-user-buffer-q ()
   "Return t if current buffer is a user buffer, else nil.

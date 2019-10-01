@@ -255,6 +255,9 @@
 ;; Don't ask for confirmation when deleting buffer
 (setq ibuffer-expert t)
 
+;; Set auto-save bookmarks flag
+(setq bookmark-save-flag 1)
+
 ; (load-theme 'adwaita t)
 (load-theme 'wombat t)
 ;;(load-theme 'misterioso t)
