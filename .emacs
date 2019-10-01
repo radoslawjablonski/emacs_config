@@ -171,8 +171,8 @@
     (define-key c++-mode-map [(tab)] 'company-complete))
   )
 
-(require 'company-irony-c-headers)
 (with-eval-after-load 'company
+  (require 'company-irony-c-headers)
   '(add-to-list
     'company-backends '(company-irony-c-headers company-irony)))
 
