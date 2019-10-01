@@ -258,6 +258,10 @@
 ;; Set auto-save bookmarks flag
 (setq bookmark-save-flag 1)
 
+;; irony custom headers dir example
+;; (setq irony-additional-clang-options
+;;      (append '("-I" "/usr/rlocal/include") irony-additional-clang-options))
+
 ; (load-theme 'adwaita t)
 (load-theme 'wombat t)
 ;;(load-theme 'misterioso t)
