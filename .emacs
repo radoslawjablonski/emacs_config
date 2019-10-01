@@ -144,7 +144,7 @@
 (defun my-c++-mode-hook ()
   (c-set-style "cc-mode")        ; use my-style defined above
   (auto-fill-mode)
-  (c-toggle-auto-hungry-state 0)
+  ;(c-toggle-auto-hungry-state 0) ; auto-newlines on {
   (local-set-key (kbd "C-/") 'comment-or-uncomment-region)
   (flyspell-prog-mode)
   (flycheck-mode)
