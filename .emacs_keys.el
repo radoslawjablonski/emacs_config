@@ -224,6 +224,11 @@ directory."
           (lambda()
             (local-unset-key (kbd "C-c C-k"))))
 
+(add-hook 'c++-mode-hook
+          (lambda()
+            (local-unset-key (kbd "C-c C-k"))))
+
+
 (defun last-edit ()
   "Go back to last add/delete edit"
   (interactive)
