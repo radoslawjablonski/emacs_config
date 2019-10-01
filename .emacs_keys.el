@@ -63,6 +63,7 @@
 (global-set-key (kbd "<f5>") 'create-tags)
 
 (global-set-key (kbd "<f6>") 'visit-tags-table)
+(global-set-key (kbd "<f7>") 're-builder)
 ;; TODO: F7-F9 is free to use:)
 
 (defun xah-user-buffer-q ()
@@ -374,4 +375,5 @@ selects backward.)"
     (query-replace-regexp (reb-target-binding reb-regexp) to-string)))
 
 (with-eval-after-load 're-builder
+  (setq reb-re-syntax 'string)          ; normally \\ are needed instead of \
   (define-key reb-mode-map (kbd "M-%") 'reb-query-replace))
