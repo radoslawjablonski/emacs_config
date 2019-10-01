@@ -360,3 +360,18 @@ selects backward.)"
   (evil-set-initial-state 'bookmark-bmenu-mode 'normal)
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'magit-mode 'emacs))
+
+;; Adds smart integration with query-replace for re-builder
+;; (Copying between re-builder and isearch/standard replace works
+;; poorly)
+(defun reb-query-replace (to-string)
+  "Replace current RE from point with `query-replace-regexp'."
+  (interactive
+   (progn (barf-if-buffer-read-only)
+          (list (query-replace-read-to (reb-target-binding reb-regexp)
+                                       "Query replace"  t))))
+  (with-current-buffer reb-target-buffer
+    (query-replace-regexp (reb-target-binding reb-regexp) to-string)))
+
+(with-eval-after-load 're-builder
+  (define-key reb-mode-map (kbd "M-%") 'reb-query-replace))
