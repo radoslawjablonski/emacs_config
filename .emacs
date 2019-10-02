@@ -258,6 +258,9 @@
 ;; Set auto-save bookmarks flag
 (setq bookmark-save-flag 1)
 
+;; do not pause re-write gui during key events
+(setq redisplay-dont-pause t)
+
 ;; irony custom headers dir example
 ;; (setq irony-additional-clang-options
 ;;      (append '("-I" "/usr/rlocal/include") irony-additional-clang-options))

@@ -64,7 +64,7 @@
 
 (global-set-key (kbd "<f6>") 'visit-tags-table)
 (global-set-key (kbd "<f7>") 'list-bookmarks)
-;; TODO <f8> is free (global-set-key (kbd "<f7>") 're-builder)
+(global-set-key (kbd "<f8>") '(lambda ()  (interactive) (term "/bin/zsh")))
 ;; TODO: f9 free
 
 (defun xah-user-buffer-q ()
