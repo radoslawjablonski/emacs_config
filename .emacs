@@ -261,6 +261,12 @@
 ;; do not pause re-write gui during key events
 (setq redisplay-dont-pause t)
 
+;; use y-n instead long form (yes/no)
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; and another helper for not asking for killing processes
+(setq kill-buffer-query-functions nil)
+
 ;; irony custom headers dir example
 ;; (setq irony-additional-clang-options
 ;;      (append '("-I" "/usr/rlocal/include") irony-additional-clang-options))
