@@ -21,7 +21,6 @@
     )
   )
 
-(global-set-key [(C-mouse-1)] 'xref-find-definitions)
 (global-set-key [(mouse-4)] (lambda () (interactive) (scroll-down 8)) )
 (global-set-key [(mouse-5)]  (lambda () (interactive) (scroll-up 8)) )
 (global-set-key [(mouse-2)] 'mouse-yank-at-click) ;middle button paste
@@ -206,6 +205,7 @@ If not, then fallback to standard isearch-backward"
   )
 
 (global-set-key (kbd "M-.") 'wrap-object-code-search)
+(global-set-key [(C-mouse-1)] 'wrap-object-code-search)
 
 ;; Run command in current directory - not used frequently now though
 (defun in-directory (dir)
