@@ -63,8 +63,8 @@
 (global-set-key (kbd "<f5>") 'create-tags)
 
 (global-set-key (kbd "<f6>") 'visit-tags-table)
-(global-set-key (kbd "<f7>") 'list-bookmarks)
-(global-set-key (kbd "<f8>") '(lambda ()  (interactive) (term "/bin/zsh")))
+(global-set-key (kbd "<f7>") '(lambda ()  (interactive) (ansi-term "/bin/zsh")))
+(global-set-key (kbd "<f8>") 'list-bookmarks)
 ;; TODO: f9 free
 
 (defun xah-user-buffer-q ()
