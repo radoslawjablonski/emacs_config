@@ -53,6 +53,10 @@
 (global-set-key (kbd "<f2>") 'eval-buffer)
 (global-set-key (kbd "<f3>") 'magit-status)
 (global-set-key (kbd "<f4>") 'ibuffer)
+;; smart toggle-switch for <f4> ibuffer key
+(add-hook 'ibuffer-mode-hook
+          (lambda ()
+            (define-key ibuffer-mode-map (kbd "<f4>") 'previous-buffer)))
 
 ;; NOTE: add '-L' to find to follow symlink references
 (defun create-tags (dir-name)
@@ -64,7 +68,17 @@
 
 (global-set-key (kbd "<f6>") 'visit-tags-table)
 (global-set-key (kbd "<f7>") '(lambda ()  (interactive) (ansi-term "/bin/zsh")))
+;; and smart toggle-kill terminal for <f7> 
+(add-hook 'term-mode-hook
+          (lambda ()
+            (define-key term-raw-map (kbd "<f7>") 'kill-this-buffer)))
+
 (global-set-key (kbd "<f8>") 'list-bookmarks)
+;; and smart toggle kill-bookmarks for <f8>
+(add-hook 'bookmark-bmenu-mode-hook
+          (lambda ()
+            (define-key bookmark-bmenu-mode-map (kbd "<f8>") 'kill-this-buffer)))
+
 ;; TODO: f9 free
 
 (defun xah-user-buffer-q ()
@@ -354,6 +368,9 @@ selects backward.)"
 ;; M-o window switch
 ;; rarely used now but quite helpfull with a lot of windows
 (global-set-key (kbd "M-o") 'other-window)
+
+;; M-s save-buffer helper
+(global-set-key (kbd "M-s") 'save-buffer)
 
 ;; on some terminal 'End' is mapped as '<select>
 (global-set-key (kbd "<select>") 'move-end-of-line)
