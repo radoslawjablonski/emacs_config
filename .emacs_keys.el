@@ -34,12 +34,7 @@
 (define-key comint-mode-map (kbd "<down>") 'comint-next-input)
 
 (global-set-key (kbd "C-M-w") 'whitespace-mode)
-;; friendly key for undo!
-(global-set-key (kbd "C-u") 'universal-argument)
-;; and setting up previously unset C-u (universal argument)
-;; (global-set-key (kbd "C-;") 'universal-argument) ;; problem undar terminal :/
 
-;; comment region similar to eclipse (normally it binds to UNDO, C-/ is problematic :( )
 ;; Setting C-c C-c globally (not only in C modes for commenting)
 (global-set-key (kbd "C-c C-c") 'comment-line)
 
