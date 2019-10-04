@@ -132,7 +132,6 @@ Version 2016-06-19"
 (global-set-key (kbd "<f12>") 'xah-next-user-buffer)
 
 (global-set-key (kbd "C-l") 'goto-line)
-;(global-set-key (kbd "C-M-f") 'indent-region) ;;practically unused and standard regex search might suit better...
 
 ;; isearch selection string wrappers
 (defun search-selection-string (str is_forward)
