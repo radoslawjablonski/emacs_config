@@ -40,9 +40,8 @@
 ;; (global-set-key (kbd "C-;") 'universal-argument) ;; problem undar terminal :/
 
 ;; comment region similar to eclipse (normally it binds to UNDO, C-/ is problematic :( )
-;; same as C-c C-c
-(global-set-key (kbd "C-x /") 'comment-line)
-(global-set-key (kbd "C-c /") 'comment-line)
+;; Setting C-c C-c globally (not only in C modes for commenting)
+(global-set-key (kbd "C-c C-c") 'comment-line)
 
 ;;calls make
 (global-set-key (kbd "C-M-b") 'compile)
