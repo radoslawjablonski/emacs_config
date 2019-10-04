@@ -289,10 +289,15 @@ directory."
 (global-set-key (kbd "C-x C-n") 'company-complete)
 (global-set-key (kbd "C-c v") 'rectangle-mark-mode) ;; normally C-x <space>
 
+(with-eval-after-load 'ibuffer
+  (define-key ibuffer-mode-map (kbd "f") 'ibuffer-filter-by-name))
+
 (with-eval-after-load 'dired
   ;; DIRED mode helpers
   ;; dired narrow mode - dynamic filtering of directories after '/'
   (define-key dired-mode-map (kbd "/") 'dired-narrow)
+  ;; 'f' key maps to enter in this mode, can take it safely
+  (define-key dired-mode-map (kbd "f") 'dired-narrow)
 
   ;; dired-subtree module insert and close
   (define-key dired-mode-map (kbd "i") 'dired-subtree-insert)
