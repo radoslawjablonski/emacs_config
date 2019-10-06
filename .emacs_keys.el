@@ -36,7 +36,9 @@
 (global-set-key (kbd "C-M-w") 'whitespace-mode)
 
 ;; Setting C-c C-c globally (not only in C modes for commenting)
+;; NOTE: it interacts with CUA mode when selection is done
 (global-set-key (kbd "C-c C-c") 'comment-line)
+(global-set-key (kbd "C-M-_") 'comment-line) ;; C-M-/
 
 ;;calls make
 (global-set-key (kbd "C-M-b") 'compile)
