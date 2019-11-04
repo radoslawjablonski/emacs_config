@@ -400,3 +400,12 @@ selects backward.)"
 (with-eval-after-load 're-builder
   (setq reb-re-syntax 'string)          ; normally \\ are needed instead of \
   (define-key reb-mode-map (kbd "M-%") 'reb-query-replace))
+
+(defun rj-insert-todo-comment ()
+  "Simple function for generating TODO comment body (mapped to C-c t)"
+  (interactive)
+  (message "Insert todo called!")
+  (call-interactively 'comment-dwim)
+  (insert "TODO: "))
+
+(global-set-key (kbd "C-c t") 'rj-insert-todo-comment)
