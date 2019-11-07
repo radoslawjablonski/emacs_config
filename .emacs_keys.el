@@ -409,3 +409,23 @@ selects backward.)"
   (insert "TODO: "))
 
 (global-set-key (kbd "C-c t") 'rj-insert-todo-comment)
+
+;; Alt-Arrows navigation (NOTE: some shells interprets Alt-Arrow as Esc-Arrow
+;; so it looks quite messy...)
+(require 'windmove)
+(global-set-key (kbd "<ESC> <down>") 'windmove-down)
+(global-set-key (kbd "<ESC> <up>") 'windmove-up)
+(global-set-key (kbd "<ESC> <left>") 'windmove-left)
+(global-set-key (kbd "<ESC> <right>") 'windmove-right)
+
+(global-set-key (kbd "M-<down>") 'windmove-down)
+(global-set-key (kbd "M-<up>") 'windmove-up)
+(global-set-key (kbd "M-<left>") 'windmove-left)
+(global-set-key (kbd "M-<right>") 'windmove-right)
+
+;; unbind alt-arrow sequences from terminal to allow window movement
+;; also M-x is quite usefull in emacs even in terminal
+(add-hook 'term-mode-hook
+          (lambda()
+            (define-key term-raw-map (kbd "M-x") 'nil)
+            (define-key term-raw-map (kbd "ESC ESC") 'nil)))
