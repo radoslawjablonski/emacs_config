@@ -41,15 +41,23 @@
    # Python packages
    - name: Install pip2 emacs plugin deps
      pip:
-        name: edi flake8 importmagic autopep8
+        name:
+          - edi
+          - flake8
+          - importmagic
+          - autopep8
 
    # install for pip3 as well
    - name: Install pip3 equivalents
      pip:
-        name: edi flake8 importmagic autopep8
+        name:
+          - edi
+          - flake8
+          - importmagic
+          - autopep8
         executable: pip3
 
-   # Packages are hosted now directly in emacs 
+   # Packages are hosted now directly in emacs
    # install emacs packages from melpa
    #- name: Install emacs melpa packages
    #  script: tools/melpa_install_packages.sh
