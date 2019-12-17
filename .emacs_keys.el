@@ -309,9 +309,6 @@ directory."
   (define-key dired-mode-map (kbd "X") 'dired-ranger-move)
   (define-key dired-mode-map (kbd "Y") 'dired-ranger-paste)
 
-  ;; dired-mapping for C-o for find file
-  (define-key dired-mode-map (kbd "C-o") 'find-file)
-
   (define-key dired-mode-map (kbd "<DEL>") 'dired-up-directory)
 ) ;; end of dired mode keys
 
