@@ -9,6 +9,7 @@
 
 (load-file "~/.emacs_keys.el")
 (load-file "~/.emacs_custom_func.el")
+(load-file "~/.emacs_macros.el")
 ;; normally using whitespace where possible, NO TABS
 (setq-default indent-tabs-mode nil)
 
