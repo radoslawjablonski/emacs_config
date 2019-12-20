@@ -25,13 +25,14 @@
 (global-set-key [(mouse-5)]  (lambda () (interactive) (scroll-up 8)) )
 (global-set-key [(mouse-2)] 'mouse-yank-at-click) ;middle button paste
 
+;; TODO: temporarily removing copy on mouse select
 ;copy on mouse select
-(setq mouse-drag-copy-region t)
+;;(setq mouse-drag-copy-region t)
 
 ;; normal shell history using arrows
-(progn(require 'comint))
-(define-key comint-mode-map (kbd "<up>") 'comint-previous-input)
-(define-key comint-mode-map (kbd "<down>") 'comint-next-input)
+;; (progn(require 'comint))
+;; (define-key comint-mode-map (kbd "<up>") 'comint-previous-input)
+;; (define-key comint-mode-map (kbd "<down>") 'comint-next-input)
 
 (global-set-key (kbd "C-M-w") 'whitespace-mode)
 
@@ -44,10 +45,10 @@
 (global-set-key (kbd "C-M-b") 'compile)
 
 ;; friendly enlarge window
-(global-set-key (kbd "<f1>") 'evil-mode)
+(global-set-key (kbd "<f1>") 'magit-status)
 (global-set-key (kbd "<f2>") 'eval-buffer)
-(global-set-key (kbd "<f3>") 'magit-status)
-(global-set-key (kbd "<f4>") 'ibuffer)
+
+;; NOTE: f3 and f4 by standard are usefull for macro define/execute
 ;; smart toggle-switch for <f4> ibuffer key
 (add-hook 'ibuffer-mode-hook
           (lambda ()
@@ -381,6 +382,8 @@ selects backward.)"
   (evil-set-initial-state 'bookmark-bmenu-mode 'normal)
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'magit-mode 'emacs))
+(setq evil-insert-state-map (make-sparse-keymap))
+(define-key evil-insert-state-map (kbd "<escape>") 'evil-normal-state)
 
 ;; Adds smart integration with query-replace for re-builder
 ;; (Copying between re-builder and isearch/standard replace works
