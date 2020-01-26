@@ -429,3 +429,8 @@ selects backward.)"
           (lambda()
             (define-key term-raw-map (kbd "M-x") 'nil)
             (define-key term-raw-map (kbd "ESC ESC") 'nil)))
+
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)

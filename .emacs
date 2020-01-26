@@ -271,6 +271,7 @@
 ;; add tab-helper for YAML files (hels a lot)
 (add-hook 'yaml-mode-hook 'highlight-indentation-mode)
 
+(setq org-agenda-files (list "~/agenda.org"))
 ;; irony custom headers dir example
 ;; (setq irony-additional-clang-options
 ;;      (append '("-I" "/usr/rlocal/include") irony-additional-clang-options))
