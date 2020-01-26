@@ -268,11 +268,14 @@
 ;; and another helper for not asking for killing processes
 (setq kill-buffer-query-functions nil)
 
+;; add tab-helper for YAML files (hels a lot)
+(add-hook 'yaml-mode-hook 'highlight-indentation-mode)
+
 ;; irony custom headers dir example
 ;; (setq irony-additional-clang-options
 ;;      (append '("-I" "/usr/rlocal/include") irony-additional-clang-options))
 
-; (load-theme 'adwaita t)
+;(load-theme 'adwaita t)
 (load-theme 'wombat t)
 ;;(load-theme 'misterioso t)
 ;;(custom-set-variables
@@ -301,7 +304,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (dired-ranger dired-subtree dired-narrow dired-hacks-utils evil lalalilo groovy-imports groovy-mode clojure-mode yasnippet company jinja2-mode ansible forest-blue-theme challenger-deep-theme flycheck-irony eldoc-extension irony-eldoc yasnippet-snippets magit company-irony-c-headers company-irony irony elpy sr-speedbar flycheck)))
+    (highlight-indent-guides indent-tools yaml-mode dired-ranger dired-subtree dired-narrow dired-hacks-utils evil lalalilo groovy-imports groovy-mode clojure-mode yasnippet company jinja2-mode ansible forest-blue-theme challenger-deep-theme flycheck-irony eldoc-extension irony-eldoc yasnippet-snippets magit company-irony-c-headers company-irony irony elpy sr-speedbar flycheck)))
  '(python-shell-interpreter "python3")
  '(safe-local-variable-values
    (quote
