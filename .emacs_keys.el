@@ -160,9 +160,6 @@ If not, then fallback to standard isearch-forward"
   )
 
 (global-set-key (kbd "C-s") 'search-forward-wrapper)
-(global-set-key (kbd "C-f") 'search-forward-wrapper)
-;; it is needed also to add C-f for continuation
-(define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
 
 (defun search-backward-wrapper ()
   "If some region is marked, put marked text in search area.
@@ -268,8 +265,6 @@ directory."
 (global-set-key "\C-co" 'switch-to-minibuffer) ;; Bind to `C-c o'
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace) ;; delete single ws on beginning/end lines
 
-;; for compatibility with C-f searcher
-(global-set-key (kbd "C-c f") 'isearch-forward-symbol-at-point)
 (global-set-key (kbd "C-c s") 'isearch-forward-symbol-at-point)
 
 ;; Vi compatibility shortuts
@@ -349,10 +344,6 @@ selects backward.)"
 
 ;; transpose two windows with each other
 (global-set-key (kbd "C-x t") 'window-swap-states)
-
-;; M-o window switch
-;; rarely used now but quite helpfull with a lot of windows
-(global-set-key (kbd "M-o") 'other-window)
 
 ;; M-s save-buffer helper
 (global-set-key (kbd "M-s") 'save-buffer)
