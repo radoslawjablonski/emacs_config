@@ -233,15 +233,6 @@ directory."
      (t (message "No add/delete edit occurred")))))
 (global-set-key (kbd "M-e") 'last-edit)
 
-(defun copy-buffer-name ()
-  (interactive)
-  (kill-new (buffer-name))
-  (message "Copied %s to the clipboard" (buffer-name))
-  )
-
-;; TODO: unused
-(global-set-key (kbd "C-c b") 'copy-buffer-name)
-
 ;; go to minibuffer
 (defun switch-to-minibuffer ()
   "Switch to minibuffer window."
