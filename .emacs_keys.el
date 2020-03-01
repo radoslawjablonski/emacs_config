@@ -30,9 +30,9 @@
 ;;(setq mouse-drag-copy-region t)
 
 ;; normal shell history using arrows
-;; (progn(require 'comint))
-;; (define-key comint-mode-map (kbd "<up>") 'comint-previous-input)
-;; (define-key comint-mode-map (kbd "<down>") 'comint-next-input)
+(progn(require 'comint))
+(define-key comint-mode-map (kbd "<up>") 'comint-previous-input)
+(define-key comint-mode-map (kbd "<down>") 'comint-next-input)
 
 (global-set-key (kbd "C-M-w") 'whitespace-mode)
 
