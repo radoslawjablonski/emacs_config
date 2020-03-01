@@ -36,8 +36,6 @@
 
 (global-set-key (kbd "C-M-w") 'whitespace-mode)
 
-(global-set-key (kbd "C-M-_") 'comment-line) ;; C-M-/
-
 ;;calls make
 (global-set-key (kbd "C-M-b") 'compile)
 
