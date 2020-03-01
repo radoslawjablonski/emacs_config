@@ -402,3 +402,4 @@ selects backward.)"
 (setq org-log-done t)
 
 (global-set-key (kbd "C-c e") 'iedit-mode)
+(global-set-key (kbd "C-c h") 'highlight-indentation-mode)
