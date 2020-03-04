@@ -9,7 +9,6 @@ if [ ! -e ~/.ssh/id_rsa.pub ]; then
 fi
 
 # Copying private key, 'tee -a' for appending data
-#cat ~/.ssh/id_rsa.pub|sudo tee -a /root/.ssh/authorized_keys # ROOT snippet
 cat ~/.ssh/id_rsa.pub|tee -a ~/.ssh/authorized_keys
 
-ansible-playbook --verbose -s emacs_deps.yml -i inventory
+ansible-playbook install_emacs_dependencies.yml -i inventory

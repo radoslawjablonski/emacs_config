@@ -1,4 +1,4 @@
-### ansible-playbook -s emacs_deps.yml  ###
+### ansible-playbook  emacs_deps.yml  ###
 
 - hosts: local
   tasks:
@@ -6,17 +6,7 @@
      apt:
         name: python-apt
         state: present
-
-### Assuming that emacs will be installed
-#   - name: Add emacs25 repository
-#     apt_repository:
-#        repo: ppa:kelleyk/emacs
-#        state: present
-
-#   - name: Install emacs25
-#     apt:
-#        name: emacs25
-#        state: present
+     become: yes
 
    - name: Install clang irony dependencies
      apt:
@@ -31,12 +21,14 @@
         - python-pip
         - cppcheck
         - autotools-dev
+     become: yes
 
 # Python setuptools
    - name: Install python-setuptools (needed for pip)
      apt:
         name: python-setuptools
         state: present
+     become: yes
 
    # Python packages
    - name: Install pip2 emacs plugin deps
@@ -56,9 +48,3 @@
           - importmagic
           - autopep8
         executable: pip3
-
-   # Packages are hosted now directly in emacs
-   # install emacs packages from melpa
-   #- name: Install emacs melpa packages
-   #  script: tools/melpa_install_packages.sh
-   #  become: false
