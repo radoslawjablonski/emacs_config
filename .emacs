@@ -276,6 +276,10 @@
 ;; (setq irony-additional-clang-options
 ;;      (append '("-I" "/usr/rlocal/include") irony-additional-clang-options))
 
+;; nice auto-save feature for executables
+(add-hook 'after-save-hook
+          'executable-make-buffer-file-executable-if-script-p)
+
 ;(load-theme 'adwaita t)
 (load-theme 'wombat t)
 ;;(load-theme 'misterioso t)
@@ -305,7 +309,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (highlight-indent-guides indent-tools yaml-mode dired-ranger dired-subtree dired-narrow dired-hacks-utils evil lalalilo groovy-imports groovy-mode clojure-mode yasnippet company jinja2-mode ansible forest-blue-theme challenger-deep-theme flycheck-irony eldoc-extension irony-eldoc yasnippet-snippets magit company-irony-c-headers company-irony irony elpy sr-speedbar flycheck)))
+    (iedit highlight-indent-guides indent-tools yaml-mode dired-ranger dired-subtree dired-narrow dired-hacks-utils evil lalalilo groovy-imports groovy-mode clojure-mode yasnippet company jinja2-mode ansible forest-blue-theme challenger-deep-theme flycheck-irony eldoc-extension irony-eldoc yasnippet-snippets magit company-irony-c-headers company-irony irony elpy sr-speedbar flycheck)))
  '(python-shell-interpreter "python3")
  '(safe-local-variable-values
    (quote
