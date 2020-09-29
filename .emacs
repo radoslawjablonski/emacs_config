@@ -282,6 +282,7 @@
 
 ;(load-theme 'adwaita t)
 (load-theme 'wombat t)
+(evil-mode t)
 ;;(load-theme 'misterioso t)
 ;;(custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -304,12 +305,12 @@
  '(column-number-mode t)
  '(custom-safe-themes
    (quote
-    ("2fb337439962efc687d9f9f2bf7263e6de3e6b4b910154a02927c2a70acf496c" default)))
+    ("2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "c433c87bd4b64b8ba9890e8ed64597ea0f8eb0396f4c9a9e01bd20a04d15d358" "2fb337439962efc687d9f9f2bf7263e6de3e6b4b910154a02927c2a70acf496c" default)))
  '(gdb-many-windows t)
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (iedit highlight-indent-guides indent-tools yaml-mode dired-ranger dired-subtree dired-narrow dired-hacks-utils evil lalalilo groovy-imports groovy-mode clojure-mode yasnippet company jinja2-mode ansible forest-blue-theme challenger-deep-theme flycheck-irony eldoc-extension irony-eldoc yasnippet-snippets magit company-irony-c-headers company-irony irony elpy sr-speedbar flycheck)))
+    (evil-tabs solarized-theme iedit highlight-indent-guides indent-tools yaml-mode dired-ranger dired-subtree dired-narrow dired-hacks-utils evil lalalilo groovy-imports groovy-mode clojure-mode yasnippet company jinja2-mode ansible forest-blue-theme challenger-deep-theme flycheck-irony eldoc-extension irony-eldoc yasnippet-snippets magit company-irony-c-headers company-irony irony elpy sr-speedbar flycheck)))
  '(python-shell-interpreter "python3")
  '(safe-local-variable-values
    (quote

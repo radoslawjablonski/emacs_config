@@ -341,15 +341,14 @@ selects backward.)"
 ;; re-binding all standard keypresses because there is
 ;; simply too much of them C-z C-x C-v C-k C-e ....
 ;; Easier simply to disable it when not needed
+(setq evil-disable-insert-state-bindings t)
 (with-eval-after-load 'evil
   (evil-set-initial-state 'ibuffer-mode 'emacs)
   (evil-set-initial-state 'bookmark-bmenu-mode 'normal)
-  (evil-set-initial-state 'dired-mode 'emacs)
-  (evil-set-initial-state 'magit-mode 'emacs))
-(setq evil-insert-state-map (make-sparse-keymap))
-(define-key evil-insert-state-map (kbd "<escape>") 'evil-normal-state)
-(evil-select-search-module 'evil-search-module 'evil-search)
-(evil-ex-define-cmd "q" 'kill-this-buffer)
+  (evil-set-initial-state 'magit-mode 'emacs)
+  (evil-select-search-module 'evil-search-module 'evil-search)
+  (evil-ex-define-cmd "q" 'kill-this-buffer))
+;;(setq evil-insert-state-map (make-sparse-keymap))
 
 ;; Adds smart integration with query-replace for re-builder
 ;; (Copying between re-builder and isearch/standard replace works
