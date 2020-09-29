@@ -41,7 +41,7 @@
 
 ;; friendly enlarge window
 (global-set-key (kbd "<f1>") 'magit-status)
-(global-set-key (kbd "<f2>") 'eval-buffer)
+(global-set-key (kbd "<f2>") 'evil-mode)
 
 ;; NOTE: f3 and f4 by standard are usefull for macro define/execute
 ;; smart toggle-switch for <f4> ibuffer key
@@ -348,6 +348,8 @@ selects backward.)"
   (evil-set-initial-state 'magit-mode 'emacs))
 (setq evil-insert-state-map (make-sparse-keymap))
 (define-key evil-insert-state-map (kbd "<escape>") 'evil-normal-state)
+(evil-select-search-module 'evil-search-module 'evil-search)
+(evil-ex-define-cmd "q" 'kill-this-buffer)
 
 ;; Adds smart integration with query-replace for re-builder
 ;; (Copying between re-builder and isearch/standard replace works
