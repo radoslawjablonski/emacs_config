@@ -1,6 +1,13 @@
 ### ansible-playbook  emacs_deps.yml  ###
 
-- hosts: local
+- hosts: all
+  pre_tasks:
+   - name: Update apt cache
+     apt: update_cache=yes
+     become: yes
+
+# download git emacs repo
+# copy symlinks
   tasks:
    - name: Install ansible apt helpers
      apt:
@@ -18,7 +25,6 @@
         - clang
         - cmake
         - python3-pip
-        - python-pip
         - cppcheck
         - autotools-dev
      become: yes
