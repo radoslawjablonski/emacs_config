@@ -402,3 +402,19 @@ selects backward.)"
 
 (global-set-key (kbd "C-c e") 'iedit-mode)
 (global-set-key (kbd "C-c h") 'highlight-indentation-mode)
+
+;; { ' " helpers
+(global-set-key (kbd "M-{") 'insert-pair)
+;;(global-set-key (kbd "C-c {") 'insert-pair)
+(global-set-key (kbd "M-\"") 'insert-pair)
+(global-set-key (kbd "M-'") 'insert-pair)
+
+;; Temporarily maximize current buffer/window. EXTREMELY usefull when doing copy-pasting
+(defun toggle-maximize-buffer () "Maximize buffer"
+ (interactive)
+ (if (= 1 (length (window-list)))
+     (jump-to-register '_)
+   (progn
+     (window-configuration-to-register '_)
+     (delete-other-windows))))
+(global-set-key (kbd "C-c z") 'toggle-maximize-buffer)
