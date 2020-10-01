@@ -280,6 +280,9 @@
 (add-hook 'after-save-hook
           'executable-make-buffer-file-executable-if-script-p)
 
+;; probably faster than normal scp
+(setq tramp-default-method "ssh")
+
 ;(load-theme 'adwaita t)
 (load-theme 'wombat t)
 (evil-mode t)
