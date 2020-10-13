@@ -285,7 +285,13 @@
 
 ;(load-theme 'adwaita t)
 (load-theme 'wombat t)
-(evil-mode t)
+;; probably it is just to late for me to use evil-mode by default it is good for:
+;; - finding regexes
+;; - doing some regexp changes (in emacs it is a mess)
+;; ... and thats it. Other modes are currently well emulated by my configs (like super star or
+;; refactor)
+
+;;(evil-mode t)
 ;;(load-theme 'misterioso t)
 ;;(custom-set-variables
  ;; custom-set-variables was added by Custom.
