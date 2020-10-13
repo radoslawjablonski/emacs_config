@@ -283,6 +283,10 @@
 ;; probably faster than normal scp
 (setq tramp-default-method "ssh")
 
+;; wgrep is cool feature that allows editing rgrep results
+(require 'wgrep)
+(setq wgrep-enable-key "w")
+
 ;(load-theme 'adwaita t)
 (load-theme 'wombat t)
 ;; probably it is just to late for me to use evil-mode by default it is good for:
