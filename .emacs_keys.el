@@ -415,6 +415,11 @@ selects backward.)"
  (if (= 1 (length (window-list)))
      (jump-to-register '_)
    (progn
-     (window-configuration-to-register '_)
+     (window-configuration-to-register '_)OA
      (delete-other-windows))))
 (global-set-key (kbd "C-c z") 'toggle-maximize-buffer)
+
+;; dired open in single buffer
+(put 'dired-find-alternate-file 'disabled nil) ; disables warning
+(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file) ; was dired-advertised-find-file
+(define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
