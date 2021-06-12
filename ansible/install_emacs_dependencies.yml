@@ -27,6 +27,7 @@
         - python3-pip
         - cppcheck
         - autotools-dev
+        - valgrind
      become: yes
 
 # Python setuptools
