@@ -281,9 +281,9 @@ directory."
   (define-key dired-mode-map (kbd "<DEL>") 'dired-up-directory)
 
   ;; dired open in single buffer
-  (put 'dired-find-alternate-file 'disabled nil) ; disables warning
-  (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file) ; was dired-advertised-find-file
-  (define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
+  ;(put 'dired-find-alternate-file 'disabled nil) ; disables warning
+  ;(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file) ; was dired-advertised-find-file
+  ;(define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
 
 ) ;; end of dired mode keys
 
