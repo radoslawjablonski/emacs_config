@@ -2,10 +2,6 @@
 ;; enabling friendly C-c C-x C-z shortcuts when there is a selection
 (cua-mode t)
 
-;; NOTE: C-o handling also is re-mapped in dired mode (opened dir in frame
-;; by default)
-(global-set-key (kbd "C-o") 'find-file)
-
 ;;mouse
 
 (xterm-mouse-mode 1)
@@ -25,10 +21,6 @@
 (global-set-key [(mouse-5)]  (lambda () (interactive) (scroll-up 8)) )
 (global-set-key [(mouse-2)] 'mouse-yank-at-click) ;middle button paste
 
-;; TODO: temporarily removing copy on mouse select
-;copy on mouse select
-;;(setq mouse-drag-copy-region t)
-
 ;; normal shell history using arrows
 (progn(require 'comint))
 (define-key comint-mode-map (kbd "<up>") 'comint-previous-input)
@@ -42,12 +34,6 @@
 ;; friendly enlarge window
 (global-set-key (kbd "<f1>") 'magit-status)
 (global-set-key (kbd "<f2>") 'evil-mode)
-
-;; NOTE: f3 and f4 by standard are usefull for macro define/execute
-;; smart toggle-switch for <f4> ibuffer key
-(add-hook 'ibuffer-mode-hook
-          (lambda ()
-            (define-key ibuffer-mode-map (kbd "<f4>") 'previous-buffer)))
 
 ;; NOTE: add '-L' to find to follow symlink references
 (defun create-tags (dir-name)
@@ -279,12 +265,6 @@ directory."
   (define-key dired-mode-map (kbd "Y") 'dired-ranger-paste)
 
   (define-key dired-mode-map (kbd "<DEL>") 'dired-up-directory)
-
-  ;; dired open in single buffer
-  ;(put 'dired-find-alternate-file 'disabled nil) ; disables warning
-  ;(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file) ; was dired-advertised-find-file
-  ;(define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
-
 ) ;; end of dired mode keys
 
 ;; use IVY for virtual buffers with C-c v and C-c V shortcuts
