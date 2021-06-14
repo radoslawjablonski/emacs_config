@@ -381,11 +381,6 @@ selects backward.)"
             (define-key term-raw-map (kbd "M-x") 'nil)
             (define-key term-raw-map (kbd "ESC ESC") 'nil)))
 
-(require 'org)
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-(setq org-log-done t)
-
 (global-set-key (kbd "C-c e") 'iedit-mode)
 (global-set-key (kbd "C-c h") 'highlight-indentation-mode)
 
