@@ -1,4 +1,4 @@
- (package-initialize)
+; (package-initialize)
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
 
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-scheduler-mode)
@@ -63,8 +63,8 @@
 ;; this allows us to get search word history when replacing
 (setq enable-recursive-minibuffers t)
 
-; do not delimit words by '_' when selecting
-(add-hook 'c-mode-common-hook 'superword-mode)
+; disabling annoying superword mode - if on, do not delimit words by '_' when selecting
+;;(add-hook 'c-mode-common-hook 'superword-mode)
 
 ;;disable auto-save
 ;;(setq make-backup-files nil) ; stop creating backup~ files
@@ -280,6 +280,8 @@
 (add-hook 'after-save-hook
           'executable-make-buffer-file-executable-if-script-p)
 
+;; fill brackets automatically
+(electric-pair-mode)
 ;; probably faster than normal scp
 (setq tramp-default-method "ssh")
 
@@ -317,25 +319,19 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(custom-safe-themes
-   (quote
-    ("2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "c433c87bd4b64b8ba9890e8ed64597ea0f8eb0396f4c9a9e01bd20a04d15d358" "2fb337439962efc687d9f9f2bf7263e6de3e6b4b910154a02927c2a70acf496c" default)))
+   '("2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "c433c87bd4b64b8ba9890e8ed64597ea0f8eb0396f4c9a9e01bd20a04d15d358" "2fb337439962efc687d9f9f2bf7263e6de3e6b4b910154a02927c2a70acf496c" default))
  '(gdb-many-windows t)
  '(menu-bar-mode nil)
  '(package-selected-packages
-   (quote
-    (evil-tabs solarized-theme iedit highlight-indent-guides indent-tools yaml-mode dired-ranger dired-subtree dired-narrow dired-hacks-utils evil lalalilo groovy-imports groovy-mode clojure-mode yasnippet company jinja2-mode ansible forest-blue-theme challenger-deep-theme flycheck-irony eldoc-extension irony-eldoc yasnippet-snippets magit company-irony-c-headers company-irony irony elpy sr-speedbar flycheck)))
+   '(irony-eldoc evil-tabs solarized-theme iedit highlight-indent-guides indent-tools yaml-mode dired-ranger dired-subtree dired-narrow dired-hacks-utils evil lalalilo groovy-imports groovy-mode clojure-mode yasnippet company jinja2-mode ansible forest-blue-theme challenger-deep-theme flycheck-irony eldoc-extension yasnippet-snippets magit company-irony-c-headers company-irony irony elpy sr-speedbar flycheck))
  '(python-shell-interpreter "python3")
  '(safe-local-variable-values
-   (quote
-    ((eval setq company-clang-arguments
-           (quote
-            ("--std=c99")))
+   '((eval setq company-clang-arguments
+           '("--std=c99"))
      (eval setq company-clang-arguments
-           (quote
-            ("-std=c99")))
+           '("-std=c99"))
      (eval setq company-clang-arguments
-           (quote
-            ("-std=c++11"))))))
+           '("-std=c++11"))))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (put 'erase-buffer 'disabled nil)
