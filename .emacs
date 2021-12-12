@@ -114,9 +114,11 @@
 ;imenu - disabled
 ;(add-hook 'c-mode-common-hook 'imenu-add-menubar-index)
 
+;; disable completion at point - I'm not using it anyway,
+;; because always it happens automatically C-x C-n can be used
 ;; add completion at point
-(global-set-key (kbd "C-@") 'company-complete) ;; for term
-(global-set-key (kbd "C-SPC") 'company-complete) ;; for X
+;; (global-set-key (kbd "C-@") 'company-complete) ;; for term
+;; (global-set-key (kbd "C-SPC") 'company-complete) ;; for X
 
 ;; set default tab char's display width to 4 spaces
 (setq-default tab-width 4) ; emacs 23.1, 24.2, default to 8
