@@ -291,8 +291,14 @@
 (require 'wgrep)
 (setq wgrep-enable-key "w")
 
+(use-package rustic)
+(setq rustic-lsp-client 'eglot)
+(add-hook 'rustic-mode-hook
+          'flycheck-mode)
+
 ;(load-theme 'adwaita t)
 (load-theme 'wombat t)
+
 ;; probably it is just to late for me to use evil-mode by default it is good for:
 ;; - finding regexes
 ;; - doing some regexp changes (in emacs it is a mess)
@@ -325,7 +331,7 @@
  '(gdb-many-windows t)
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(irony-eldoc evil-tabs solarized-theme iedit highlight-indent-guides indent-tools yaml-mode dired-ranger dired-subtree dired-narrow dired-hacks-utils evil lalalilo groovy-imports groovy-mode clojure-mode yasnippet company jinja2-mode ansible forest-blue-theme challenger-deep-theme flycheck-irony eldoc-extension yasnippet-snippets magit company-irony-c-headers company-irony irony elpy sr-speedbar flycheck))
+   '(eglot projectile use-package lsp-ui lsp-mode rustic rust-mode irony-eldoc evil-tabs solarized-theme iedit highlight-indent-guides indent-tools yaml-mode dired-ranger dired-subtree dired-narrow dired-hacks-utils evil lalalilo groovy-imports groovy-mode clojure-mode yasnippet company jinja2-mode ansible forest-blue-theme challenger-deep-theme flycheck-irony eldoc-extension yasnippet-snippets magit company-irony-c-headers company-irony irony elpy sr-speedbar flycheck))
  '(python-shell-interpreter "python3")
  '(safe-local-variable-values
    '((eval setq company-clang-arguments
